@@ -1,9 +1,12 @@
 import React from 'react';
 
-const ImageList = (props) => {
-  console.log(props.images);
+const ImageList = props => {
+  const images =  props.images.map(({description, id, urls}) => {
+    // assign key property to root element
+    return <img alt={description} key={id} src={urls.regular} />
+  });
 
-  return <div>ImageList</div>
+  return <div>{images}</div>;
 };
 
 export default ImageList;
